@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConDABench Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1><i class="fas fa-chart-line"></i> ConDABench</h1>
+                <p>Interactive Evaluation of Language Models for Advanced Data Analysis</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search benchmarks..." class="search-input">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <div class="benchmark-grid" id="benchmark-grid">
+                <!-- Benchmark cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for detailed view -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <button class="close-modal" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-main-content">
+                    <div class="modal-section">
+                        <h3><i class="fas fa-question-circle"></i> Query</h3>
+                        <p id="modal-query"></p>
+                    </div>
+                    <div class="modal-section">
+                        <h3><i class="fas fa-database"></i> Dataset Preview</h3>
+                        <div id="modal-dataset"></div>
+                    </div>
+                    <div class="modal-section">
+                        <h3><i class="fas fa-lightbulb"></i> Answer</h3>
+                        <p id="modal-answer"></p>
+                    </div>
+                    <div class="modal-section">
+                        <h3><i class="fas fa-code"></i> Program</h3>
+                        <pre id="modal-program"></pre>
+                    </div>
+                    <div class="modal-section">
+                        <h3><i class="fas fa-terminal"></i> Program Output</h3>
+                        <pre id="modal-output"></pre>
+                    </div>
+                    <div class="modal-section" id="modal-plot-section" style="display: none;">
+                        <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
+                        <div id="modal-plot"></div>
+                    </div>
+                </div>
+                <div id="dataset-preview-container" class="dataset-preview-container" style="display: none;">
+                    <!-- Dataset preview will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ConDABench.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
