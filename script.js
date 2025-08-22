@@ -26,6 +26,9 @@ function initializeApp() {
     
     // Set up event listeners
     setupEventListeners();
+    
+    // Load leaderboard data
+    loadLeaderboardData();
 }
 
 function setupEventListeners() {
@@ -444,16 +447,23 @@ async function loadLeaderboardData() {
         // Extract all models from both frameworks
         const allModels = [];
 
-        data.Frameworks.forEach(model => {
-            allModels.push({
-                model: model.Model,
-                framework: model.Framework,
-                overall: model.Overall.Score,
-                easy: model.Easy.Score,
-                hard: model.Hard.Score,
-                overallConvQ: model.Overall.ConvQ,
-                easyConvQ: model.Easy.ConvQ,
-                hardConvQ: model.Hard.ConvQ
+        // Iterate through frameworks
+        data.Frameworks.forEach(frameworkData => {
+            // Each framework has a name as key and array of models as value
+            Object.keys(frameworkData).forEach(frameworkName => {
+                const models = frameworkData[frameworkName];
+                models.forEach(model => {
+                    allModels.push({
+                        model: model.Model,
+                        framework: frameworkName,
+                        overall: model.Overall.Score,
+                        easy: model.Easy.Score,
+                        hard: model.Hard.Score,
+                        overallConvQ: model.Overall.ConvQ,
+                        easyConvQ: model.Easy.ConvQ,
+                        hardConvQ: model.Hard.ConvQ
+                    });
+                });
             });
         });
         
