@@ -55,24 +55,37 @@
             margin-right: 1rem;
         }
 
-        .authors {
+        .authors-academic {
+            text-align: center;
+            margin: 2rem 0;
             font-size: 1.1rem;
-            margin-bottom: 2rem;
             opacity: 0.9;
-            font-weight: 400;
             line-height: 1.6;
         }
 
-        .authors .author-name {
-            display: inline-block;
-            margin: 0 0.75rem;
-            padding: 0.2rem 0;
+        .authors-academic p {
+            margin: 0.5rem 0;
+            font-weight: 400;
         }
 
-        .authors .author-name:not(:last-child)::after {
-            content: "•";
-            margin-left: 1rem;
-            opacity: 0.7;
+        .authors-academic .author-name {
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+
+        .authors-academic sup {
+            font-size: 0.8em;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-left: 0.1rem;
+        }
+
+        .authors-academic .affiliations {
+            font-size: 1rem;
+            opacity: 0.85;
+            font-style: italic;
+            margin-top: 1rem;
+            font-weight: 300;
         }
 
         .hero p {
@@ -211,16 +224,22 @@
         <div class="hero-content">
             <h1><i class="fas fa-chart-line"></i>ConDABench</h1>
             <h2>Interactive Evaluation of Language Models for Data Analysis</h2>
-            <div class="authors">
-                <span class="author-name">Avik Dutta</span>
-                <span class="author-name">Priyanshu Gupta</span>
-                <span class="author-name">Hosein Hasanbeig</span>
-                <span class="author-name">Rahul Pratap Singh</span>
-                <span class="author-name">Harshit Nigam</span>
-                <span class="author-name">Sumit Gulwani</span>
-                <span class="author-name">Arjun Radhakrishna</span>
-                <span class="author-name">Gustavo Soares</span>
-                <span class="author-name">Ashish Tiwari</span>
+            <div class="authors-academic">
+                <p>
+                    <strong>Avik Dutta</strong><sup>1</sup>, 
+                    <strong>Priyanshu Gupta</strong><sup>1</sup>, 
+                    <strong>Hosein Hasanbeig</strong><sup>2</sup>, 
+                    <strong>Rahul Pratap Singh</strong><sup>1</sup>, 
+                    <strong>Harshit Nigam</strong><sup>1</sup>, 
+                    <strong>Sumit Gulwani</strong><sup>2</sup>, 
+                    <strong>Arjun Radhakrishna</strong><sup>2</sup>, 
+                    <strong>Gustavo Soares</strong><sup>2</sup>, 
+                    <strong>Ashish Tiwari</strong><sup>2</sup>
+                </p>
+                <p class="affiliations">
+                    <sup>1</sup>Microsoft, Bengaluru<br>
+                    <sup>2</sup>Microsoft, Redmond
+                </p>
             </div>
             
             <div class="cta-buttons">
