@@ -3,87 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConDABench Dashboard</title>
+    <title>ConDABench - Evaluating Language Models for Data Analysis</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for the main landing page */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="50" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="25" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            z-index: 1;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #ffffff, #f0f8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero h1 i {
+            color: var(--accent-color);
+            margin-right: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 2.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button.primary {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-button.primary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-button i {
+            font-size: 1.2rem;
+        }
+
+        .features {
+            padding: 6rem 0;
+            background: var(--background);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: var(--card-background);
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <h1><i class="fas fa-chart-line"></i> ConDABench</h1>
-                <p>Interactive Evaluation of Language Models for Data Analysis</p>
+    <section class="hero">
+        <div class="hero-content">
+            <h1><i class="fas fa-chart-line"></i>ConDABench</h1>
+            <p>Comprehensive evaluation framework for Language Models in Data Analysis tasks. Assess LLM capabilities through real-world data analysis challenges.</p>
+            
+            <div class="cta-buttons">
+                <a href="data_preview.html" class="cta-button primary">
+                    <i class="fas fa-database"></i>
+                    Explore Data Preview
+                </a>
+                <a href="#features" class="cta-button">
+                    <i class="fas fa-info-circle"></i>
+                    Learn More
+                </a>
             </div>
         </div>
-    </header>
+    </section>
 
-    <nav class="nav">
+    <section id="features" class="features">
         <div class="container">
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search benchmarks..." class="search-input">
-                <i class="fas fa-search search-icon"></i>
+            <div class="text-center">
+                <h2 style="font-size: 3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;">
+                    Why ConDABench?
+                </h2>
+                <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    A robust evaluation framework designed to assess language model performance across diverse data analysis scenarios.
+                </p>
             </div>
-        </div>
-    </nav>
 
-    <main class="main">
-        <div class="container">
-            <div class="benchmark-grid" id="benchmark-grid">
-                <!-- Benchmark cards will be populated by JavaScript -->
-            </div>
-        </div>
-    </main>
-
-    <!-- Modal for detailed view -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modal-title"></h2>
-                <button class="close-modal" onclick="closeModal()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-main-content">
-                    <div class="modal-section">
-                        <h3><i class="fas fa-question-circle"></i> Query</h3>
-                        <p id="modal-query"></p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
                     </div>
-                    <div class="modal-section">
-                        <h3><i class="fas fa-database"></i> Dataset Preview</h3>
-                        <div id="modal-dataset"></div>
-                    </div>
-                    <div class="modal-section">
-                        <h3><i class="fas fa-lightbulb"></i> Answer</h3>
-                        <p id="modal-answer"></p>
-                    </div>
-                    <div class="modal-section">
-                        <h3><i class="fas fa-code"></i> Program</h3>
-                        <pre id="modal-program"></pre>
-                    </div>
-                    <div class="modal-section">
-                        <h3><i class="fas fa-terminal"></i> Program Output</h3>
-                        <pre id="modal-output"></pre>
-                    </div>
-                    <div class="modal-section" id="modal-plot-section" style="display: none;">
-                        <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
-                        <div id="modal-plot"></div>
-                    </div>
+                    <h3>Comprehensive Evaluation</h3>
+                    <p>Evaluate language models across multiple data analysis tasks including statistical analysis, visualization, and pattern recognition.</p>
                 </div>
-                <div id="dataset-preview-container" class="dataset-preview-container" style="display: none;">
-                    <!-- Dataset preview will be loaded here -->
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Real-World Datasets</h3>
+                    <p>Built on authentic CSV datasets from finance, healthcare, demographics, and other domains for practical assessment.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Interactive Framework</h3>
+                    <p>Explore benchmark results through an intuitive interface with detailed analysis views and performance metrics.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Standardized Metrics</h3>
+                    <p>Compare models using consistent evaluation criteria including PASQ, ABQ, and UASQ metrics for reliable benchmarking.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Open Source</h3>
+                    <p>Fully open-source framework enabling researchers to reproduce results and extend the benchmark with new datasets.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Easy Integration</h3>
+                    <p>Simple API and pipeline setup for evaluating both open-source and proprietary language models on data analysis tasks.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer class="footer">
+    <footer class="footer" style="background: var(--text-primary); color: white; padding: 3rem 0; text-align: center;">
         <div class="container">
-            <p>&copy; 2025 ConDABench.</p>
+            <p>&copy; 2025 ConDABench. Licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" style="color: var(--accent-color);">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Advancing the evaluation of language models in data analysis.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Smooth scrolling for the "Learn More" button
+        document.addEventListener('DOMContentLoaded', function() {
+            const learnMoreButton = document.querySelector('a[href="#features"]');
+            if (learnMoreButton) {
+                learnMoreButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const featuresSection = document.getElementById('features');
+                    featuresSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
