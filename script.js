@@ -466,7 +466,9 @@ async function loadLeaderboardData() {
                 });
             });
         });
-        
+
+        console.log('Loaded models for leaderboard:', allModels);
+
         // Sort by overall score in descending order
         allModels.sort((a, b) => b.overall - a.overall);
         
