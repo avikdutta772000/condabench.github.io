@@ -150,6 +150,42 @@
             background: var(--background);
         }
 
+        .image-showcase {
+            padding: 4rem 0;
+            background: var(--card-background);
+        }
+
+        .image-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--background);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .framework-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .framework-image:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .image-caption {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            text-align: center;
+        }
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -267,67 +303,33 @@
         </div>
     </section>
 
+    <section class="image-showcase">
+        <div class="container">
+            <div class="text-center">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 2rem; text-align: center;">
+                    ConDABench Framework
+                </h2>
+                <div class="image-container">
+                    <img src="images/teaserv5.png" alt="Benchmark Synthesis Framework" class="framework-image">
+                    <p class="image-caption">
+                        From an article and data <i>d</i>, Curation pipeline extracts a query-answer pair (q, a) for which the code generation pipeline produces code c to support the answer a. Details on the agents' implementation, including the prompt outlines, can be found on https://github.com/condabench/condabench_details.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="features" class="features">
         <div class="container">
             <div class="text-center">
                 <h2 style="font-size: 3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; text-align: center;">
-                    Why ConDABench?
+                    Abstract
                 </h2>
                 <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
-                    A robust evaluation framework designed to assess language model performance across diverse data analysis scenarios.
+                    Real-world data analysis tasks often come with under-specified goals and unclean data. User interaction is necessary to understand and disambiguate a user's intent, and hence, essential to solving these complex tasks. Existing benchmarks for evaluating LLMs on data analysis tasks do not capture these complexities or provide first-class support for interactivity. We introduce ConDABench, a framework for generating conversational data analysis (ConDA) benchmarks and evaluating external tools on the generated benchmarks. ConDABench consists of (a) a multi-agent workflow for generating realistic benchmarks from articles describing insights gained from public datasets, (b) 1,420 ConDA problems generated using this workflow, and (c) an evaluation harness that, for the first time, makes it possible to systematically evaluate conversational data analysis tools on the generated ConDA problems. Evaluation of state-of-the-art LLMs on the benchmarks reveals that while the new generation of models are better at solving more instances, they are not necessarily better at solving tasks that require long conversations. ConDABench is an avenue for model builders to measure progress towards truly collaborative models that can complete complex interactive tasks.
                 </p>
             </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>Comprehensive Evaluation</h3>
-                    <p>Evaluate language models across multiple data analysis tasks including statistical analysis, visualization, and pattern recognition.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Real-World Datasets</h3>
-                    <p>Built on authentic CSV datasets from finance, healthcare, demographics, and other domains for practical assessment.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Interactive Framework</h3>
-                    <p>Explore benchmark results through an intuitive interface with detailed analysis views and performance metrics.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Standardized Metrics</h3>
-                    <p>Compare models using consistent evaluation criteria including PASQ, ABQ, and UASQ metrics for reliable benchmarking.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Open Source</h3>
-                    <p>Fully open-source framework enabling researchers to reproduce results and extend the benchmark with new datasets.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Easy Integration</h3>
-                    <p>Simple API and pipeline setup for evaluating both open-source and proprietary language models on data analysis tasks.</p>
-                </div>
-            </div>
-        </div>
+        </div> 
     </section>
 
     <footer class="footer" style="background: var(--text-primary); color: white; padding: 3rem 0; text-align: center;">
