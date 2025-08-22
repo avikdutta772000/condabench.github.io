@@ -145,7 +145,7 @@
             font-size: 1.2rem;
         }
 
-        .features {
+        .abstract {
             padding: 6rem 0;
             background: var(--background);
         }
@@ -303,6 +303,19 @@
         </div>
     </section>
 
+    <section id="abstract" class="abstract">
+        <div class="container">
+            <div class="text-center">
+                <h2 style="font-size: 3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; text-align: center;">
+                    Abstract
+                </h2>
+                <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Real-world data analysis tasks often come with under-specified goals and unclean data. User interaction is necessary to understand and disambiguate a user's intent, and hence, essential to solving these complex tasks. Existing benchmarks for evaluating LLMs on data analysis tasks do not capture these complexities or provide first-class support for interactivity. We introduce ConDABench, a framework for generating conversational data analysis (ConDA) benchmarks and evaluating external tools on the generated benchmarks. ConDABench consists of (a) a multi-agent workflow for generating realistic benchmarks from articles describing insights gained from public datasets, (b) 1,420 ConDA problems generated using this workflow, and (c) an evaluation harness that, for the first time, makes it possible to systematically evaluate conversational data analysis tools on the generated ConDA problems. Evaluation of state-of-the-art LLMs on the benchmarks reveals that while the new generation of models are better at solving more instances, they are not necessarily better at solving tasks that require long conversations. ConDABench is an avenue for model builders to measure progress towards truly collaborative models that can complete complex interactive tasks.
+                </p>
+            </div>
+        </div> 
+    </section>
+
     <section class="image-showcase">
         <div class="container">
             <div class="text-center">
@@ -319,19 +332,6 @@
         </div>
     </section>
 
-    <section id="features" class="features">
-        <div class="container">
-            <div class="text-center">
-                <h2 style="font-size: 3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; text-align: center;">
-                    Abstract
-                </h2>
-                <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
-                    Real-world data analysis tasks often come with under-specified goals and unclean data. User interaction is necessary to understand and disambiguate a user's intent, and hence, essential to solving these complex tasks. Existing benchmarks for evaluating LLMs on data analysis tasks do not capture these complexities or provide first-class support for interactivity. We introduce ConDABench, a framework for generating conversational data analysis (ConDA) benchmarks and evaluating external tools on the generated benchmarks. ConDABench consists of (a) a multi-agent workflow for generating realistic benchmarks from articles describing insights gained from public datasets, (b) 1,420 ConDA problems generated using this workflow, and (c) an evaluation harness that, for the first time, makes it possible to systematically evaluate conversational data analysis tools on the generated ConDA problems. Evaluation of state-of-the-art LLMs on the benchmarks reveals that while the new generation of models are better at solving more instances, they are not necessarily better at solving tasks that require long conversations. ConDABench is an avenue for model builders to measure progress towards truly collaborative models that can complete complex interactive tasks.
-                </p>
-            </div>
-        </div> 
-    </section>
-
     <footer class="footer" style="background: var(--text-primary); color: white; padding: 3rem 0; text-align: center;">
         <div class="container">
             <p>&copy; 2025 ConDABench.</p>
@@ -340,18 +340,9 @@
     </footer>
 
     <script>
-        // Smooth scrolling for the "Learn More" button
+        // Page loaded
         document.addEventListener('DOMContentLoaded', function() {
-            const learnMoreButton = document.querySelector('a[href="#features"]');
-            if (learnMoreButton) {
-                learnMoreButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const featuresSection = document.getElementById('features');
-                    featuresSection.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            }
+            // Page initialization if needed
         });
     </script>
 </body>
