@@ -233,6 +233,172 @@
             line-height: 1.6;
         }
 
+        /* Leaderboard Styles */
+        .leaderboard-section {
+            padding: 6rem 0;
+            background: var(--background);
+        }
+
+        .leaderboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .leaderboard-table-wrapper {
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .leaderboard-table th {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .leaderboard-table th.framework-col,
+        .leaderboard-table th.model-col {
+            text-align: left;
+            min-width: 120px;
+        }
+
+        .category-header {
+            font-size: 1rem;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .category-header.overall {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+        }
+
+        .category-header.easy {
+            background: linear-gradient(135deg, #4299e1, #3182ce);
+        }
+
+        .category-header.hard {
+            background: linear-gradient(135deg, #ed8936, #dd6b20);
+        }
+
+        .metric-subheader {
+            font-size: 0.85rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        .leaderboard-table td {
+            padding: 1rem 0.75rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            border-right: 1px solid rgba(226, 232, 240, 0.3);
+        }
+
+        .leaderboard-table td.framework-cell,
+        .leaderboard-table td.model-cell {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .leaderboard-table td.framework-cell {
+            color: var(--primary-color);
+        }
+
+        .leaderboard-table td.model-cell {
+            color: var(--text-primary);
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+        }
+
+        .score-cell {
+            font-weight: 600;
+            color: var(--success-color);
+        }
+
+        .convq-cell {
+            font-weight: 500;
+            color: var(--info-color);
+        }
+
+        .leaderboard-table tr:hover {
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .rank-1 {
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), transparent);
+        }
+
+        .rank-2 {
+            background: linear-gradient(90deg, rgba(192, 192, 192, 0.1), transparent);
+        }
+
+        .rank-3 {
+            background: linear-gradient(90deg, rgba(205, 127, 50, 0.1), transparent);
+        }
+
+        .rank-1 td.framework-cell::before {
+            content: "🥇 ";
+        }
+
+        .rank-2 td.framework-cell::before {
+            content: "🥈 ";
+        }
+
+        .rank-3 td.framework-cell::before {
+            content: "🥉 ";
+        }
+
+        .leaderboard-notes {
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .leaderboard-notes h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .leaderboard-notes h4 i {
+            color: var(--info-color);
+        }
+
+        .leaderboard-notes ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .leaderboard-notes li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.3);
+            color: var(--text-secondary);
+        }
+
+        .leaderboard-notes li:last-child {
+            border-bottom: none;
+        }
+
+        .leaderboard-notes strong {
+            color: var(--text-primary);
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -256,6 +422,20 @@
             .features-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .leaderboard-table-wrapper {
+                overflow-x: auto;
+            }
+
+            .leaderboard-table {
+                min-width: 800px;
+            }
+
+            .leaderboard-table th,
+            .leaderboard-table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -295,7 +475,7 @@
                     <i class="fas fa-balance-scale"></i>
                     Evaluation
                 </a>
-                <a href="pages/data_preview.html" class="cta-button primary" target="_blank" rel="noopener noreferrer">
+                <a href="pages/data_preview.html" class="cta-button primary">
                     <i class="fas fa-database"></i>
                     Dataset
                 </a>
@@ -343,6 +523,134 @@
                     <p class="image-caption">
                         The evaluation harness uses a User Proxy to simulate real users, enabling interactive testing of data analysis tools. It measures both response correctness and conversation quality. This ensures fair, consistent evaluation of interactive DA systems. 
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="leaderboard-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 2rem; text-align: center;">
+                    <i class="fas fa-trophy"></i> Leaderboard
+                </h2>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 3rem;">
+                    Performance comparison of different language models on ConDABench evaluation tasks
+                </p>
+            </div>
+            
+            <div class="leaderboard-container">
+                <div class="leaderboard-table-wrapper">
+                    <table class="leaderboard-table">
+                        <thead>
+                            <tr>
+                                <th rowspan="2" class="framework-col">Framework</th>
+                                <th rowspan="2" class="model-col">Model</th>
+                                <th colspan="2" class="category-header overall">Overall</th>
+                                <th colspan="2" class="category-header easy">Easy</th>
+                                <th colspan="2" class="category-header hard">Hard</th>
+                            </tr>
+                            <tr>
+                                <th class="metric-subheader">Score</th>
+                                <th class="metric-subheader">ConvQ</th>
+                                <th class="metric-subheader">Score</th>
+                                <th class="metric-subheader">ConvQ</th>
+                                <th class="metric-subheader">Score</th>
+                                <th class="metric-subheader">ConvQ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="rank-1">
+                                <td class="framework-cell">OpenAI</td>
+                                <td class="model-cell">GPT-4o</td>
+                                <td class="score-cell">85.2</td>
+                                <td class="convq-cell">4.1</td>
+                                <td class="score-cell">91.8</td>
+                                <td class="convq-cell">4.3</td>
+                                <td class="score-cell">78.6</td>
+                                <td class="convq-cell">3.9</td>
+                            </tr>
+                            <tr class="rank-2">
+                                <td class="framework-cell">Anthropic</td>
+                                <td class="model-cell">Claude-3.5-Sonnet</td>
+                                <td class="score-cell">82.7</td>
+                                <td class="convq-cell">4.0</td>
+                                <td class="score-cell">89.3</td>
+                                <td class="convq-cell">4.2</td>
+                                <td class="score-cell">76.1</td>
+                                <td class="convq-cell">3.8</td>
+                            </tr>
+                            <tr class="rank-3">
+                                <td class="framework-cell">OpenAI</td>
+                                <td class="model-cell">GPT-4-Turbo</td>
+                                <td class="score-cell">79.4</td>
+                                <td class="convq-cell">3.8</td>
+                                <td class="score-cell">86.2</td>
+                                <td class="convq-cell">4.0</td>
+                                <td class="score-cell">72.6</td>
+                                <td class="convq-cell">3.6</td>
+                            </tr>
+                            <tr>
+                                <td class="framework-cell">Google</td>
+                                <td class="model-cell">Gemini-1.5-Pro</td>
+                                <td class="score-cell">76.8</td>
+                                <td class="convq-cell">3.7</td>
+                                <td class="score-cell">83.5</td>
+                                <td class="convq-cell">3.9</td>
+                                <td class="score-cell">70.1</td>
+                                <td class="convq-cell">3.5</td>
+                            </tr>
+                            <tr>
+                                <td class="framework-cell">Anthropic</td>
+                                <td class="model-cell">Claude-3-Opus</td>
+                                <td class="score-cell">74.2</td>
+                                <td class="convq-cell">3.6</td>
+                                <td class="score-cell">81.7</td>
+                                <td class="convq-cell">3.8</td>
+                                <td class="score-cell">66.7</td>
+                                <td class="convq-cell">3.4</td>
+                            </tr>
+                            <tr>
+                                <td class="framework-cell">Meta</td>
+                                <td class="model-cell">Llama-3-70B</td>
+                                <td class="score-cell">68.9</td>
+                                <td class="convq-cell">3.3</td>
+                                <td class="score-cell">76.4</td>
+                                <td class="convq-cell">3.5</td>
+                                <td class="score-cell">61.4</td>
+                                <td class="convq-cell">3.1</td>
+                            </tr>
+                            <tr>
+                                <td class="framework-cell">Mistral</td>
+                                <td class="model-cell">Mixtral-8x7B</td>
+                                <td class="score-cell">63.5</td>
+                                <td class="convq-cell">3.1</td>
+                                <td class="score-cell">71.2</td>
+                                <td class="convq-cell">3.3</td>
+                                <td class="score-cell">55.8</td>
+                                <td class="convq-cell">2.9</td>
+                            </tr>
+                            <tr>
+                                <td class="framework-cell">Meta</td>
+                                <td class="model-cell">Llama-3-8B</td>
+                                <td class="score-cell">58.7</td>
+                                <td class="convq-cell">2.8</td>
+                                <td class="score-cell">66.3</td>
+                                <td class="convq-cell">3.0</td>
+                                <td class="score-cell">51.1</td>
+                                <td class="convq-cell">2.6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="leaderboard-notes">
+                    <h4><i class="fas fa-info-circle"></i> Evaluation Metrics</h4>
+                    <ul>
+                        <li><strong>Score:</strong> Percentage of correctly solved data analysis tasks</li>
+                        <li><strong>ConvQ:</strong> Conversation quality score (1-5 scale) measuring interaction effectiveness</li>
+                        <li><strong>Easy/Hard:</strong> Task difficulty based on complexity and required reasoning steps</li>
+                    </ul>
                 </div>
             </div>
         </div>
