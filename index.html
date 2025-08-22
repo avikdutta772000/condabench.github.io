@@ -541,7 +541,7 @@
             
             <div class="leaderboard-container">
                 <div class="leaderboard-table-wrapper">
-                    <table class="leaderboard-table">
+                    <table class="leaderboard-table" id="leaderboard-table">
                         <thead>
                             <tr>
                                 <th rowspan="2" class="framework-col">Framework</th>
@@ -560,86 +560,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="rank-1">
-                                <td class="framework-cell">OpenAI</td>
-                                <td class="model-cell">GPT-4o</td>
-                                <td class="score-cell">85.2</td>
-                                <td class="convq-cell">4.1</td>
-                                <td class="score-cell">91.8</td>
-                                <td class="convq-cell">4.3</td>
-                                <td class="score-cell">78.6</td>
-                                <td class="convq-cell">3.9</td>
-                            </tr>
-                            <tr class="rank-2">
-                                <td class="framework-cell">Anthropic</td>
-                                <td class="model-cell">Claude-3.5-Sonnet</td>
-                                <td class="score-cell">82.7</td>
-                                <td class="convq-cell">4.0</td>
-                                <td class="score-cell">89.3</td>
-                                <td class="convq-cell">4.2</td>
-                                <td class="score-cell">76.1</td>
-                                <td class="convq-cell">3.8</td>
-                            </tr>
-                            <tr class="rank-3">
-                                <td class="framework-cell">OpenAI</td>
-                                <td class="model-cell">GPT-4-Turbo</td>
-                                <td class="score-cell">79.4</td>
-                                <td class="convq-cell">3.8</td>
-                                <td class="score-cell">86.2</td>
-                                <td class="convq-cell">4.0</td>
-                                <td class="score-cell">72.6</td>
-                                <td class="convq-cell">3.6</td>
-                            </tr>
-                            <tr>
-                                <td class="framework-cell">Google</td>
-                                <td class="model-cell">Gemini-1.5-Pro</td>
-                                <td class="score-cell">76.8</td>
-                                <td class="convq-cell">3.7</td>
-                                <td class="score-cell">83.5</td>
-                                <td class="convq-cell">3.9</td>
-                                <td class="score-cell">70.1</td>
-                                <td class="convq-cell">3.5</td>
-                            </tr>
-                            <tr>
-                                <td class="framework-cell">Anthropic</td>
-                                <td class="model-cell">Claude-3-Opus</td>
-                                <td class="score-cell">74.2</td>
-                                <td class="convq-cell">3.6</td>
-                                <td class="score-cell">81.7</td>
-                                <td class="convq-cell">3.8</td>
-                                <td class="score-cell">66.7</td>
-                                <td class="convq-cell">3.4</td>
-                            </tr>
-                            <tr>
-                                <td class="framework-cell">Meta</td>
-                                <td class="model-cell">Llama-3-70B</td>
-                                <td class="score-cell">68.9</td>
-                                <td class="convq-cell">3.3</td>
-                                <td class="score-cell">76.4</td>
-                                <td class="convq-cell">3.5</td>
-                                <td class="score-cell">61.4</td>
-                                <td class="convq-cell">3.1</td>
-                            </tr>
-                            <tr>
-                                <td class="framework-cell">Mistral</td>
-                                <td class="model-cell">Mixtral-8x7B</td>
-                                <td class="score-cell">63.5</td>
-                                <td class="convq-cell">3.1</td>
-                                <td class="score-cell">71.2</td>
-                                <td class="convq-cell">3.3</td>
-                                <td class="score-cell">55.8</td>
-                                <td class="convq-cell">2.9</td>
-                            </tr>
-                            <tr>
-                                <td class="framework-cell">Meta</td>
-                                <td class="model-cell">Llama-3-8B</td>
-                                <td class="score-cell">58.7</td>
-                                <td class="convq-cell">2.8</td>
-                                <td class="score-cell">66.3</td>
-                                <td class="convq-cell">3.0</td>
-                                <td class="score-cell">51.1</td>
-                                <td class="convq-cell">2.6</td>
-                            </tr>
+                            <!-- Dynamic content will be loaded here -->
                         </tbody>
                     </table>
                 </div>
@@ -663,11 +584,17 @@
         </div>
     </footer>
 
+    <!-- Load js-yaml library for parsing YAML data -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    
     <script>
         // Page loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Page initialization if needed
+            // Load leaderboard data when page loads
+            loadLeaderboardData();
         });
     </script>
+    
+    <script src="script.js"></script>
 </body>
 </html>

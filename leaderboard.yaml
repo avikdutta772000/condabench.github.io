@@ -1,0 +1,203 @@
+Frameworks:
+  - Assistants API:
+      - Model: GPT-4
+        Overall: { Score: 61.93, ConvQ: 55.41 }
+        Easy:    { Score: 63.76, ConvQ: 57.08 }
+        Hard:    { Score: 38.00, ConvQ: 33.66 }
+
+      - Model: GPT-4-Turbo
+        Overall: { Score: 70.16, ConvQ: 71.32 }
+        Easy:    { Score: 71.72, ConvQ: 71.81 }
+        Hard:    { Score: 50.00, ConvQ: 65.05 }
+
+      - Model: GPT-4o-mini
+        Overall: { Score: 32.85, ConvQ: 27.21 }
+        Easy:    { Score: 33.91, ConvQ: 27.74 }
+        Hard:    { Score: 19.19, ConvQ: 20.39 }
+
+      - Model: GPT-4o
+        Overall: { Score: 60.96, ConvQ: 59.87 }
+        Easy:    { Score: 62.82, ConvQ: 66.41 }
+        Hard:    { Score: 35.06, ConvQ: 25.56 }
+
+      - Model: GPT-4.1-nano
+        Overall: { Score: 61.81, ConvQ: 36.16 }
+        Easy:    { Score: 64.24, ConvQ: 37.47 }
+        Hard:    { Score: 31.07, ConvQ: 19.42 }
+
+      - Model: GPT-4.1
+        Overall: { Score: 68.48, ConvQ: 41.49 }
+        Easy:    { Score: 70.88, ConvQ: 42.37 }
+        Hard:    { Score: 43.67, ConvQ: 29.41 }
+
+      - Model: GPT-4.5-preview
+        Overall: { Score: 69.04, ConvQ: 59.46 }
+        Easy:    { Score: 71.03, ConvQ: 59.36 }
+        Hard:    { Score: 43.59, ConvQ: 48.04 }
+
+  - Tool Call:
+      - Model: GPT-4-Turbo
+        Overall: { Score: 33.38, ConvQ: 46.83 }
+        Easy:    { Score: 34.93, ConvQ: 47.68 }
+        Hard:    { Score: 13.59, ConvQ: 35.92 }
+
+      - Model: GPT-4o-mini
+        Overall: { Score: 54.59, ConvQ: 89.79 }
+        Easy:    { Score: 56.47, ConvQ: 90.21 }
+        Hard:    { Score: 30.39, ConvQ: 84.47 }
+
+      - Model: GPT-4o
+        Overall: { Score: 59.00, ConvQ: 91.83 }
+        Easy:    { Score: 61.29, ConvQ: 91.95 }
+        Hard:    { Score: 29.41, ConvQ: 90.29 }
+
+      - Model: GPT-4.1-nano
+        Overall: { Score: 54.17, ConvQ: 83.47 }
+        Easy:    { Score: 55.98, ConvQ: 84.16 }
+        Hard:    { Score: 31.07, ConvQ: 74.76 }
+
+      - Model: GPT-4.1-mini
+        Overall: { Score: 63.86, ConvQ: 91.30 }
+        Easy:    { Score: 66.21, ConvQ: 92.07 }
+        Hard:    { Score: 33.98, ConvQ: 81.55 }
+
+      - Model: GPT-4.1
+        Overall: { Score: 71.35, ConvQ: 94.58 }
+        Easy:    { Score: 73.29, ConvQ: 95.29 }
+        Hard:    { Score: 46.60, ConvQ: 85.44 }
+
+      - Model: GPT-4.5-preview
+        Overall: { Score: 65.11, ConvQ: 95.91 }
+        Easy:    { Score: 67.43, ConvQ: 96.20 }
+        Hard:    { Score: 35.29, ConvQ: 92.23 }
+
+      - Model: Codestarl-25.01
+        Overall: { Score: 42.40, ConvQ: 49.05 }
+        Easy:    { Score: 44.05, ConvQ: 28.44 }
+        Hard:    { Score: 21.36, ConvQ: 24.27 }
+
+      - Model: Gemini-1.5-pro
+        Overall: { Score: 47.65, ConvQ: 45.05 }
+        Easy:    { Score: 49.62, ConvQ: 45.12 }
+        Hard:    { Score: 22.55, ConvQ: 44.12 }
+
+      - Model: DeepSeek-V3
+        Overall: { Score: 61.87, ConvQ: 88.71 }
+        Easy:    { Score: 63.33, ConvQ: 90.22 }
+        Hard:    { Score: 36.89, ConvQ: 85.12 }
+
+      - Model: o1
+        Overall: { Score: 69.37, ConvQ: 88.71 }
+        Easy:    { Score: 70.84, ConvQ: 88.99 }
+        Hard:    { Score: 50.49, ConvQ: 85.15 }
+
+      - Model: o3-mini
+        Overall: { Score: 71.20, ConvQ: 94.71 }
+        Easy:    { Score: 73.2, ConvQ: 95.13 }
+        Hard:    { Score: 45.63, ConvQ: 89.12 }
+
+      - Model: o4-mini
+        Overall: { Score: 72.46, ConvQ: 96.47 }
+        Easy:    { Score: 74.79, ConvQ: 96.42 }
+        Hard:    { Score: 42.72, ConvQ: 97.09 }
+
+      - Model: o3
+        Overall: { Score: 81.06, ConvQ: 96.13 }
+        Easy:    { Score: 83.14, ConvQ: 96.42 }
+        Hard:    { Score: 54.37, ConvQ: 93.20 }
+
+      - Model: GPT-5-chat
+        Overall: { Score: 70.15, ConvQ: 95.28 }
+        Easy:    { Score: 71.99, ConvQ: 95.74 }
+        Hard:    { Score: 46.60, ConvQ: 89.32 }
+
+  - InfiAgent-Conv:
+      - Model: GPT-4o-mini
+        Overall: { Score: 52.50, ConvQ: 93.47 }
+        Easy:    { Score: 54.42, ConvQ: 93.53 }
+        Hard:    { Score: 26.60, ConvQ: 92.55 }
+
+      - Model: GPT-4o
+        Overall: { Score: 55.81, ConvQ: 91.40 }
+        Easy:    { Score: 57.98, ConvQ: 91.49 }
+        Hard:    { Score: 28.16, ConvQ: 90.29 }
+
+      - Model: GPT-4.1-nano
+        Overall: { Score: 51.83, ConvQ: 89.44 }
+        Easy:    { Score: 53.76, ConvQ: 85.88 }
+        Hard:    { Score: 27.18, ConvQ: 66.02 }
+
+      - Model: GPT-4.1-mini
+        Overall: { Score: 62.99, ConvQ: 89.48 }
+        Easy:    { Score: 64.43, ConvQ: 89.73 }
+        Hard:    { Score: 44.66, ConvQ: 86.41 }
+
+      - Model: GPT-4.1
+        Overall: { Score: 67.09, ConvQ: 95.28 }
+        Easy:    { Score: 69.38, ConvQ: 95.52 }
+        Hard:    { Score: 37.86, ConvQ: 92.23 }
+
+      - Model: GPT-4.5-preview
+        Overall: { Score: 68.81, ConvQ: 95.42 }
+        Easy:    { Score: 71.24, ConvQ: 95.25 }
+        Hard:    { Score: 37.86, ConvQ: 91.26 }
+
+      - Model: Qwen3-32B
+        Overall: { Score: 53.41, ConvQ: 75.46 }
+        Easy:    { Score: 53.00, ConvQ: 75.44 }
+        Hard:    { Score: 30.10, ConvQ: 75.73 }
+
+      - Model: Codestarl-25.01
+        Overall: { Score: 38.45, ConvQ: 81.69 }
+        Easy:    { Score: 40.02, ConvQ: 82.23 }
+        Hard:    { Score: 18.45, ConvQ: 74.76 }
+
+      - Model: Phi-4-mini
+        Overall: { Score: 18.55, ConvQ: 31.24 }
+        Easy:    { Score: 19.09, ConvQ: 31.86 }
+        Hard:    { Score: 11.65, ConvQ: 23.30 }
+
+      - Model: Phi-4
+        Overall: { Score: 35.57, ConvQ: 49.29 }
+        Easy:    { Score: 36.46, ConvQ: 70.07 }
+        Hard:    { Score: 24.47, ConvQ: 68.93 }
+
+      - Model: Gemini-1.5-pro
+        Overall: { Score: 48.77, ConvQ: 85.41 }
+        Easy:    { Score: 50.61, ConvQ: 86.17 }
+        Hard:    { Score: 25.24, ConvQ: 75.73 }
+
+      - Model: DeepSeek-R1
+        Overall: { Score: 50.11, ConvQ: 52.33 }
+        Easy:    { Score: 52.33, ConvQ: 52.61 }
+        Hard:    { Score: 27.72, ConvQ: 22.00 }
+
+      - Model: DeepSeek-V3
+        Overall: { Score: 59.66, ConvQ: 93.66 }
+        Easy:    { Score: 61.98, ConvQ: 93.23 }
+        Hard:    { Score: 30.10, ConvQ: 90.20 }
+
+      - Model: o1-mini
+        Overall: { Score: 56.84, ConvQ: 82.13 }
+        Easy:    { Score: 58.97, ConvQ: 93.54 }
+        Hard:    { Score: 29.41, ConvQ: 86.27 }
+
+      - Model: o1
+        Overall: { Score: 56.78, ConvQ: 72.83 }
+        Easy:    { Score: 58.64, ConvQ: 73.06 }
+        Hard:    { Score: 33.01, ConvQ: 69.90 }
+
+      - Model: o3-mini
+        Overall: { Score: 65.04, ConvQ: 82.83 }
+        Easy:    { Score: 66.97, ConvQ: 84.07 }
+        Hard:    { Score: 40.00, ConvQ: 83.50 }
+
+      - Model: o4-mini
+        Overall: { Score: 69.63, ConvQ: 96.34 }
+        Easy:    { Score: 72.11, ConvQ: 96.58 }
+        Hard:    { Score: 37.86, ConvQ: 93.20 }
+
+      - Model: GPT-5-chat
+        Overall: { Score: 67.77, ConvQ: 95.07 }
+        Easy:    { Score: 69.28, ConvQ: 95.37 }
+        Hard:    { Score: 48.54, ConvQ: 91.26 }
