@@ -4,8 +4,12 @@ let benchmarkData = [];
 // Load benchmark data when page loads
 document.addEventListener('DOMContentLoaded', async function() {
     try {
+        // Determine the correct path based on current location
+        const isInPages = window.location.pathname.includes('/pages/');
+        const benchmarkPath = isInPages ? '../benchmark.json' : 'benchmark.json';
+        
         // Fetch the benchmark data
-        const response = await fetch('benchmark.json');
+        const response = await fetch(benchmarkPath);
         benchmarkData = await response.json();
         
         // Initialize the app
@@ -294,6 +298,10 @@ window.BenchmarkApp = {
 // Dataset preview functionality
 async function loadDatasetPreview(datasetPath) {
     try {
+        // Adjust path based on current location
+        const isInPages = window.location.pathname.includes('/pages/');
+        const adjustedPath = isInPages ? '../' + datasetPath : datasetPath;
+        
         // Show loading state
         const previewContainer = document.getElementById('dataset-preview-container');
         const modalBody = document.querySelector('.modal-body');
@@ -328,7 +336,7 @@ async function loadDatasetPreview(datasetPath) {
         }, 50);
         
         // Fetch the dataset
-        const response = await fetch(datasetPath);
+        const response = await fetch(adjustedPath);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

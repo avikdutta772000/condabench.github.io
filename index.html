@@ -55,6 +55,26 @@
             margin-right: 1rem;
         }
 
+        .authors {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .authors .author-name {
+            display: inline-block;
+            margin: 0 0.75rem;
+            padding: 0.2rem 0;
+        }
+
+        .authors .author-name:not(:last-child)::after {
+            content: "•";
+            margin-left: 1rem;
+            opacity: 0.7;
+        }
+
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 3rem;
@@ -189,13 +209,22 @@
 <body>
     <section class="hero">
         <div class="hero-content">
-            <h1><i class="fas fa-chart-line"></i>ConDABench</h1>
+            <h1><i class="fas fa-chart-line"></i>ConDABench: Interactive Evaluation of Language Models for Data Analysis</h1>
+            
+            <div class="authors">
+                <span class="author-name">Avik Dutta</span>
+                <span class="author-name">Research Contributor 1</span>
+                <span class="author-name">Research Contributor 2</span>
+                <span class="author-name">Research Contributor 3</span>
+                <span class="author-name">Research Contributor 4</span>
+            </div>
+            
             <p>Comprehensive evaluation framework for Language Models in Data Analysis tasks. Assess LLM capabilities through real-world data analysis challenges.</p>
             
             <div class="cta-buttons">
-                <a href="data_preview.html" class="cta-button primary">
+                <a href="pages/data_preview.html" class="cta-button primary">
                     <i class="fas fa-database"></i>
-                    Explore Data Preview
+                    Data Preview
                 </a>
                 <a href="#features" class="cta-button">
                     <i class="fas fa-info-circle"></i>
